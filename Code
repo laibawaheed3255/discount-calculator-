@@ -1,0 +1,27 @@
+# discount-calculator-
+#include <iostream>
+using namespace std;
+int main(){
+    float price, percentageDiscount, fixedDiscount;
+    int discountType;
+    cout<<"Enter the price of the product: ";
+    cin>>price;
+    cout<<"Choose the type of discount: "<<endl;
+    cout<<"1. Percentage Discount"<<endl;
+    cout<<"2. Fixed Amount Discount"<<endl;
+    cin>>discountType;
+    float finalPrice;
+    if (discountType == 1){
+        cout<<"Enter the discount percentage: ";
+        cin>>percentageDiscount;
+        finalPrice = price - (price * (percentageDiscount / 100));
+    } else if (discountType == 2){
+        cout<<"Enter the fixed discount amount: ";
+        cin>>fixedDiscount;
+        finalPrice = price - fixedDiscount;
+    } else{
+        cout<<"Invalid discount type chosen!"<<endl;
+    }
+    cout<<"The final price after discount is: "<<finalPrice<<endl;
+    return 0;
+}
